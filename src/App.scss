@@ -1,24 +1,22 @@
-// $primary-color: #5f1269;
-$primary-color: #ffd700;
+.page {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0c0022;
+  color: #fff;
 
-@import 'animate.css';
-
-@font-face {
-  font-family: 'Helvetica Neue';
-  src: url('./assets/fonts/helvetica-neu.ttf');
+  .page-header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: calc(2 * var(--pad));
+    left: calc(2 * var(--pad));
+  }
 }
 
-@font-face {
-  font-family: 'La Belle Aurore';
-  src: url('./assets/fonts/LaBelleAurore.woff2');
-}
-
-@font-face {
-  font-family: 'Coolvetica';
-  src: url('./assets/fonts/CoolveticaRg-Regular.woff2');
-}
-
-input,
-textarea {
-  font-family: 'Helvetica Neue';
+ul,
+ol {
+  list-style: none;
 }

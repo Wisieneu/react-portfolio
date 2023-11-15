@@ -1,0 +1,12 @@
+:root {
+  --background-color: #1f122e;
+  --nav-background-color: #181818;
+  --pad: max(20px, 4vmin);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'IBM Plex Mono', monospace;
+}
