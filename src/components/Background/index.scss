@@ -1,0 +1,10 @@
+.background {
+  position: fixed;
+  left: var(--pad);
+  right: var(--pad);
+  top: var(--pad);
+  bottom: var(--pad);
+  pointer-events: none;
+  overflow: hidden;
+  border: 1px solid #494949;
+}
