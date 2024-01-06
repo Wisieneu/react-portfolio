@@ -23,7 +23,7 @@ ol {
   list-style: none;
 }
 
-// MOBILE MEDIA STYLING
+// MOBILE MEDIA  STYLING
 @media only screen and (max-width: 600px) {
   #background {
     left: calc(var(--pad) / 3);
@@ -76,6 +76,7 @@ ol {
   // Content boxes
   .content {
     width: auto;
+    height: 35vh;
 
     &.home-content-container {
       width: 160px;
