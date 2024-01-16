@@ -4,8 +4,7 @@
   right: var(--pad);
   top: var(--pad);
   bottom: var(--pad);
-  // pointer-events: none;
-  border: 1px solid #494949;
+  pointer-events: none;
 
   canvas {
     width: 100%;

@@ -59,6 +59,7 @@ export default function CanvasBackground() {
       size: 0.005,
     })
     const staticTorus = new THREE.Points(staticTorusGeo, staticTorusMaterial)
+    staticTorus.rotateY(10)
 
     const torusGeo = new THREE.TorusGeometry(0.7, 0.2, 16, 100)
     const torusMaterial = new THREE.PointsMaterial({
@@ -93,6 +94,9 @@ export default function CanvasBackground() {
     function animate() {
       requestAnimationFrame(animate)
 
+      staticTorus.rotation.y += 0.0002
+      staticTorus.rotation.x += 0.0001
+
       torus.rotation.x += 0.0005
       torus.rotation.y += 0.0002
       torus.rotation.z += 0.0005
@@ -104,7 +108,7 @@ export default function CanvasBackground() {
       scene.rotateZ(0.0003)
 
       scene.rotateY(-mouseY * 0.000001)
-      scene.rotateX(-mouseX * 0.0000006)
+      scene.rotateX(-mouseX * 0.0000005)
 
       renderer.render(scene, camera)
     }

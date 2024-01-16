@@ -1,13 +1,14 @@
 .contact-content-container {
   transform: translateY(300vh);
-  width: 30vw;
+  width: auto;
 
   p {
     padding: 20px 0;
   }
 
   button {
-    --c: #12001f; /* the color*/
+    --c: #160025; /* the color*/
+    min-width: 350px;
 
     font-size: 2rem;
     font-family: 'Neue Montreal';
