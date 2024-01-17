@@ -9,46 +9,45 @@
   align-items: center;
   justify-content: center;
   animation: 1s fadeOut 2s forwards;
-  // animation: name duration timing-function delay iteration-count direction fill-mode;
-}
 
-.progress {
-  background: #333;
-  justify-content: flex-start;
-  border-radius: 100px;
-  align-items: center;
-  position: relative;
-  padding: 0 5px;
-  display: flex;
-  height: 40px;
-  width: 500px;
-
-  .progress-value {
-    animation: load 1.7s 0.3s ease-in-out forwards;
-    box-shadow: 0 10px 40px -10px #fff;
+  .progress {
+    background: #333;
+    justify-content: flex-start;
     border-radius: 100px;
-    background: #fff;
-    height: 30px;
-    width: 0;
-  }
-}
-
-@keyframes load {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 100%;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
     display: flex;
+    height: 40px;
+    width: 500px;
+
+    .progress-value {
+      animation: load 1.7s 0.3s ease-out forwards;
+      box-shadow: 0 10px 40px -10px #fff;
+      border-radius: 100px;
+      background: #fff;
+      height: 30px;
+      width: 0;
+    }
   }
-  100% {
-    opacity: 0;
-    display: none;
+
+  @keyframes load {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 100%;
+      display: flex;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
   }
 }

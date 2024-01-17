@@ -36,6 +36,12 @@ ol {
     bottom: calc(var(--pad) / 3);
   }
 
+  // Loading screen
+  .loading-screen .progress {
+    width: 95vw;
+  }
+
+  // Page header
   .title-container {
     h1 {
       font-size: 40px;
