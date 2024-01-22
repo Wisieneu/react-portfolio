@@ -80,7 +80,7 @@ export default function ContactForm({ toggleModal }: ContactContentProps) {
 
     // abort the request if an email has been sent during last 12 hours
     if (lastEmailSentTime && hoursSinceLastMail < 12) {
-      return console.log('Service temporary unavailable.')
+      return alert('Service temporary unavailable. Please try again later.')
     }
     emailjs
       .sendForm(
@@ -90,12 +90,19 @@ export default function ContactForm({ toggleModal }: ContactContentProps) {
         '-MsV3Hb3BbcGyzzFS'
       )
       .then(
-        (result) => {
-          console.log(result)
+        () => {
+          alert('E-mail sent successfully.')
+          setFormState({
+            name: '',
+            email: '',
+            message: '',
+          })
           localStorage.setItem('lastEmailTime', Date.now().toString())
         },
-        (error) => {
-          console.log(error.text)
+        () => {
+          alert(
+            'Something has gone wrong. Please try again later, or create an issue on github if it persists.'
+          )
         }
       )
   }
@@ -111,9 +118,7 @@ export default function ContactForm({ toggleModal }: ContactContentProps) {
         >
           ╳
         </button>
-
         <header>CONTACT FORM</header>
-
         <form id="form" ref={form} onSubmit={sendEmail}>
           <input
             id="name"
