@@ -9,30 +9,27 @@ export default function Socials() {
     <div className="socials-container">
       <ul>
         <li>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.linkedin.com/in/wisie/"
-          >
-            <FontAwesomeIcon icon={faLinkedin} />
+          <a href="https://github.com/wisieneu">
+            <FontAwesomeIcon
+              icon={faGithub}
+              className="icon fa-github icon-github"
+            />
           </a>
         </li>
         <li>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.github.com/wisieneu"
-          >
-            <FontAwesomeIcon icon={faGithub} />
+          <a href="https://www.linkedin.com/in/wisie/">
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              className="icon fa-linkedin icon-linkedin"
+            />
           </a>
         </li>
         <li>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.github.com/wisieneu"
-          >
-            <FontAwesomeIcon icon={faEnvelope} />
+          <a href="#">
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              className="icon fa-email icon-email"
+            />
           </a>
         </li>
       </ul>
