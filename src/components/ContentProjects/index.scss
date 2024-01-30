@@ -1,0 +1,32 @@
+.projects-content-container {
+  transform: translateY(200vh);
+  width: 60vw;
+
+  li {
+    padding: 1.1rem 0;
+
+    a {
+      display: inline-block;
+      font-weight: 200;
+      font-size: 13px;
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.4s;
+
+      span {
+        font-size: 2.5rem;
+      }
+
+      h4 {
+        color: #777;
+        font-size: 0.7rem;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      &:hover {
+        transform: translateY(-2px);
+        opacity: 60%;
+      }
+    }
+  }
+}

@@ -1,12 +1,37 @@
 :root {
-  --background-color: #1f122e;
-  --nav-background-color: #181818;
-  --pad: max(20px, 4vmin);
+  --background-color: hwb(276 0% 94%);
+  --pad: max(18px, 4vmin);
+  // social icons colors
+  --social-icon-color: #929292;
+  --social-icon-hover-bg: #333333;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'IBM Plex Mono', monospace;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: local('Neue Montreal'), url(./fonts/PPNeueMontreal-Thin.otf);
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: local('Neue Montreal'), url(./fonts/PPNeueMontreal-Medium.otf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src: local('Space Mono') url(./fonts/SpaceMono-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('Montserrat') url('./fonts/Montserrat-ExtraLight.ttf');
+  font-weight: 200;
 }

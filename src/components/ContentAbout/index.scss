@@ -1,0 +1,33 @@
+.about-content-container {
+  transform: translateY(100vh);
+  width: 40vw;
+
+  h1 {
+    text-align: left;
+    font-size: 2.5rem;
+    padding: 1rem 20%;
+  }
+
+  a {
+    color: #acb4fc;
+  }
+
+  .stack-icons-container {
+    font-size: 3.4rem;
+    padding: 1.5rem 0 2rem 0;
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      border-radius: 5px;
+    }
+  }
+
+  ul {
+    text-align: left;
+    padding: 0.4rem 20%;
+    line-height: 1.5rem;
+    list-style: circle;
+    border-left: 1px solid white;
+  }
+}

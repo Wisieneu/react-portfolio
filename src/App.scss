@@ -1,10 +1,12 @@
 .page {
+  font-family: 'Neue Montreal';
+  font-weight: 200;
   position: fixed;
   left: 0;
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #0c0022;
+  background-color: var(--background-color);
   color: #fff;
 
   .page-header {
@@ -19,4 +21,102 @@
 ul,
 ol {
   list-style: none;
+}
+
+// MOBILE MEDIA STYLING
+@media only screen and (max-width: 600px) {
+  #background {
+    left: calc(var(--pad) / 3);
+    right: calc(var(--pad) / 3);
+    top: calc(var(--pad) / 3);
+    bottom: calc(var(--pad) / 3);
+  }
+
+  .title-container {
+    h1 {
+      font-size: 40px;
+      width: 80vw;
+    }
+
+    h3 {
+      font-size: 16px;
+    }
+  }
+
+  // Social icons
+  .socials-container {
+    bottom: var(--pad);
+    left: var(--pad);
+
+    ul {
+      flex-direction: column;
+
+      li {
+        a {
+          font-size: 2rem;
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+    }
+  }
+
+  // Contact form
+  .modal-container {
+    width: 100vw;
+
+    input,
+    textarea,
+    #submit {
+      max-width: 600px;
+      width: 100vw;
+    }
+  }
+
+  // Content boxes
+  .content {
+    width: auto;
+
+    &.home-content-container {
+      width: 160px;
+    }
+
+    &.about-content-container {
+      height: 75vh;
+
+      h1 {
+        padding: 10px 0 0 10px;
+      }
+
+      ul {
+        padding: 10px 0 0 30px;
+      }
+    }
+
+    &.projects-content-container {
+      height: 75vh;
+
+      a {
+        line-height: normal;
+
+        span {
+          display: inline-block;
+          line-height: 2.3rem;
+          padding: 10px 0;
+        }
+      }
+    }
+
+    &.contact-content-container {
+      h1 {
+        padding: 20px 0;
+      }
+
+      button {
+        font-size: 1.3rem;
+        width: 65vw;
+        height: 60px;
+      }
+    }
+  }
 }

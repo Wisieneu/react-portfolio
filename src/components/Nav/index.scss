@@ -1,0 +1,31 @@
+.nav-container {
+  padding-top: 50px;
+
+  button {
+    font-size: 0.9rem;
+    font-family: 'Space Mono';
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    line-height: 3rem;
+  }
+
+  .active {
+    opacity: 0.3;
+  }
+
+  .inactive {
+    text-decoration: underline;
+    transition: all 0.4s;
+
+    &:after {
+      content: ' ↗';
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-2px);
+      opacity: 0.5;
+    }
+  }
+}

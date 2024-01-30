@@ -1,0 +1,38 @@
+#content-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: all 0.4s;
+  font-weight: 400;
+  line-height: 1.3rem;
+
+  .content {
+    right: calc(2 * var(--pad));
+    bottom: calc(2 * var(--pad));
+    position: absolute;
+    text-align: right;
+    font-size: 14px;
+    overflow-y: scroll;
+    max-height: calc(100vh - calc(var(--pad) * 6));
+    // Hiding the scroll bar
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
+    }
+  }
+}
+
+// state dependent classes
+.scroll-to-about {
+  transform: translateY(-100vh);
+}
+
+.scroll-to-projects {
+  transform: translateY(-200vh);
+}
+
+.scroll-to-contact {
+  transform: translateY(-300vh);
+}
