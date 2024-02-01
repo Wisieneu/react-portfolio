@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/Addons.js'
 
 import './index.scss'
 
@@ -10,17 +9,18 @@ export default function CanvasBackground() {
   // let currentTime = Date.now();
 
   useEffect(() => {
-    // Setting up a scene
-    const scene = new THREE.Scene()
-
     const container = document.getElementById('background')!
     const canvas = document.getElementById('canvas')!
+
+    // Setting up a scene
+    const scene = new THREE.Scene()
+    scene.background = new THREE.Color(0x07000a)
 
     const camera = new THREE.PerspectiveCamera(
       75,
       container.offsetWidth / container.offsetHeight,
       0.1,
-      100
+      300
     )
 
     const renderer = new THREE.WebGLRenderer({
@@ -29,8 +29,8 @@ export default function CanvasBackground() {
     })
 
     renderer.setPixelRatio(window.devicePixelRatio)
-    renderer.setSize(container.offsetWidth, container.offsetHeight)
-    camera.position.setZ(30)
+    renderer.setSize(canvas.offsetWidth, canvas.offsetHeight)
+    camera.position.setZ(2)
 
     renderer.render(scene, camera)
 
@@ -43,52 +43,68 @@ export default function CanvasBackground() {
       renderer.setSize(container.offsetWidth, container.offsetHeight)
     }
 
-    // Setting up an object
-    const donut = new THREE.TorusGeometry(10, 3, 16, 100)
-    const material = new THREE.MeshStandardMaterial({
-      color: 0xff6347,
-    })
-    const torus = new THREE.Mesh(donut, material)
+    let mouseX = 0
+    let mouseY = 0
 
-    scene.add(torus)
+    document.addEventListener('mousemove', animateParticles)
 
-    // Lights
-    const ambientLight = new THREE.AmbientLight(0x555555)
-
-    scene.add(ambientLight)
-
-    // Helpers
-    const gridHelper = new THREE.GridHelper(200, 50)
-    scene.add(gridHelper)
-
-    const controls = new OrbitControls(camera, renderer.domElement)
-
-    function addStar() {
-      const geometry = new THREE.SphereGeometry(0.25, 24, 24)
-      const material = new THREE.MeshStandardMaterial({ color: 0xffffff })
-      const star = new THREE.Mesh(geometry, material)
-      const [x, y, z] = Array(3)
-        .fill(0)
-        .map(() => THREE.MathUtils.randFloatSpread(100))
-
-      star.position.set(x, y, z)
-      scene.add(star)
+    function animateParticles(event: globalThis.MouseEvent) {
+      mouseY = window.innerHeight / 2 - event.clientY
+      mouseX = window.innerWidth / 2 - event.clientX
     }
 
-    Array(200).fill(0).forEach(addStar)
+    // Setting up objects
+    const staticTorusGeo = new THREE.TorusGeometry(0.7, 0.2, 16, 100)
+    const staticTorusMaterial = new THREE.PointsMaterial({
+      size: 0.005,
+    })
+    const staticTorus = new THREE.Points(staticTorusGeo, staticTorusMaterial)
 
-    const spaceBackground = new THREE.TextureLoader().load('sata_antagi.png')
-    scene.background = spaceBackground
+    const torusGeo = new THREE.TorusGeometry(0.7, 0.2, 16, 100)
+    const torusMaterial = new THREE.PointsMaterial({
+      color: 0x2f2f2f,
+      size: 0.005,
+    })
+    const torus = new THREE.Points(torusGeo, torusMaterial)
+
+    // Generating stars
+    const starsGeometry = new THREE.BufferGeometry()
+    const starsCount = 5500
+    const positionArray = new Float32Array(starsCount * 3)
+    const colorArray = new Float32Array(starsCount * 3)
+    for (let i = 0; i < starsCount * 3; i++) {
+      positionArray[i] = (Math.random() - 0.5) * 8
+      colorArray[i] = Math.abs(Math.random() * 255)
+    }
+
+    starsGeometry.setAttribute(
+      'position',
+      new THREE.BufferAttribute(positionArray, 3)
+    )
+    const starsMaterial = new THREE.PointsMaterial({
+      size: 0.00001,
+      color: 0x444444,
+    })
+    const stars = new THREE.Points(starsGeometry, starsMaterial)
+
+    scene.add(staticTorus, torus, stars)
 
     // Update the scene with every frame update, in an infinite loop
     function animate() {
       requestAnimationFrame(animate)
 
-      torus.rotation.x += 0.003
-      torus.rotation.y += 0.002
-      torus.rotation.z += 0.001
+      torus.rotation.x += 0.0005
+      torus.rotation.y += 0.0002
+      torus.rotation.z += 0.0005
 
-      controls.update()
+      stars.rotation.x -= 0.00015
+      stars.rotation.y += 0.00015
+      stars.rotation.z -= 0.00015
+
+      scene.rotateZ(0.0003)
+
+      scene.rotateY(-mouseY * 0.000001)
+      scene.rotateX(-mouseX * 0.0000006)
 
       renderer.render(scene, camera)
     }

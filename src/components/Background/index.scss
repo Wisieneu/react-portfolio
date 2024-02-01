@@ -6,4 +6,10 @@
   bottom: var(--pad);
   // pointer-events: none;
   border: 1px solid #494949;
+
+  canvas {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #494949;
+  }
 }
