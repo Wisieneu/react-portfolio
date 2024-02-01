@@ -8,7 +8,7 @@ export default function Nav({ currentPage, switchPage }: NavProps) {
     return currentPage === pageName ? true : false
   }
 
-  const navElementsMarkup = ['Home', 'About', 'Projects', 'Contact'].map(
+  const navElementsMarkup = ['home', 'about', 'projects', 'contact'].map(
     (element: string, index: number) => {
       return (
         <li key={index + 1}>
@@ -16,7 +16,9 @@ export default function Nav({ currentPage, switchPage }: NavProps) {
             onClick={() => switchPage(element as pageType)}
             className={`${isCurrent(element) ? 'active' : 'inactive'}`}
           >
-            {isCurrent(element) ? '(⌒_⌒;)' : element}
+            {isCurrent(element)
+              ? '(⌒_⌒;)'
+              : `${element[0].toUpperCase()}${element.slice(1)}`}
           </button>
         </li>
       )

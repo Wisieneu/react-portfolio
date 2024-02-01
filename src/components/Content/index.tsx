@@ -14,10 +14,7 @@ interface ContentProps {
 
 export default function Content({ currentPage, toggleModal }: ContentProps) {
   return (
-    <div
-      id="content-container"
-      className={`scroll-to-${currentPage.toLowerCase()}`}
-    >
+    <div id="content-container" className={`scroll-to-${currentPage}`}>
       <ContentHome />
       <ContentAbout />
       <ContentProjects />

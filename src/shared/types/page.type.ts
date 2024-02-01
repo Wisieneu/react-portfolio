@@ -1,1 +1,1 @@
-export type pageType = 'Home' | 'About' | 'Projects' | 'Contact'
+export type pageType = 'home' | 'about' | 'projects' | 'contact'

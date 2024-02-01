@@ -11,18 +11,17 @@ import './index.scss'
 
 export default function Layout() {
   function isOfTypePageType(keyInput: string): keyInput is pageType {
-    return ['Home', 'About', 'Projects', 'Contact'].includes(keyInput)
+    console.log(keyInput)
+    return ['home', 'about', 'projects', 'contact'].includes(keyInput)
   }
 
-  const pathname = window.location.pathname
-  const defaultPage: pageType = 'Home'
+  const pathname = window.location.pathname.slice(1)
+  const defaultPage: pageType = 'home'
 
   function getPathName(): pageType {
-    return isOfTypePageType(pathname)
-      ? (`${pathname.slice(1, 2).toUpperCase()}${pathname.slice(
-          2
-        )}` as pageType)
-      : defaultPage
+    console.log(pathname)
+    console.log(isOfTypePageType(pathname))
+    return isOfTypePageType(pathname) ? (pathname as pageType) : defaultPage
   }
 
   const [currentPage, setCurrentPage] = useState<pageType>(getPathName())
@@ -35,17 +34,17 @@ export default function Layout() {
     ) as HTMLLinkElement
 
     switch (currentPage) {
-      case 'About':
+      case 'about':
         document.title = 'About me?'
         favicon.href = '/icon_goose.png'
         break
-      case 'Contact':
-        document.title = 'Send me an e-mail right now!!!!!!!!!!!'
-        favicon.href = '/icon_rat.png'
-        break
-      case 'Projects':
+      case 'projects':
         document.title = 'My protégés'
         favicon.href = '/icon_cat.png'
+        break
+      case 'contact':
+        document.title = 'Send me an e-mail right now!!!!!!!!!!!'
+        favicon.href = '/icon_rat.png'
         break
       default:
         document.title = "Bartłomiej's Portfolio"
