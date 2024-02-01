@@ -11,7 +11,6 @@ import './index.scss'
 
 export default function Layout() {
   function isOfTypePageType(keyInput: string): keyInput is pageType {
-    console.log(keyInput)
     return ['home', 'about', 'projects', 'contact'].includes(keyInput)
   }
 
@@ -19,8 +18,6 @@ export default function Layout() {
   const defaultPage: pageType = 'home'
 
   function getPathName(): pageType {
-    console.log(pathname)
-    console.log(isOfTypePageType(pathname))
     return isOfTypePageType(pathname) ? (pathname as pageType) : defaultPage
   }
 

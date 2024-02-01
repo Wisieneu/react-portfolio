@@ -57,8 +57,6 @@ export default function ContactForm({ toggleModal }: ContactContentProps) {
    * @param event
    */
   function handleFormChange(event: BaseSyntheticEvent) {
-    console.log(event)
-    console.log(typeof event)
     setFormState((prevState) => ({
       ...prevState,
       [event.target.id]: event.target.value,
