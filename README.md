@@ -1,8 +1,7 @@
-# My portfolio website
+# [My portfolio website](https://portfolio.wise-ee.xyz/)
 
-### This repo contains the source code of my portfolio website.
-
-### [>Project demo: *https://portfolio.wise-ee.xyz*](https://portfolio.wise-ee.xyz/)
+Website can be visited at: [*https://portfolio.wise-ee.xyz*](https://portfolio.wise-ee.xyz/)  
+This repo contains the source code of my portfolio website.
 
 ## Made with:
 
@@ -10,8 +9,10 @@
 
 ## Potential optimizations
 
-- More sections, perhaps a detailed tech stack one
-- More info about a project on click
+- More sections, perhaps a detailed tech stack one but I've got one on my github profile already
+- More info about a project on click, maybe some :onhover modal effect
+- More flashy **three.js** sort of stuff
+- Fireworks, idk
 
 ## Development
 
