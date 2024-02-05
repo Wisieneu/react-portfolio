@@ -3,9 +3,9 @@ import './index.scss'
 export default function ContentProjects() {
   const projects = [
     {
-      title: 'TweetSphere',
+      title: 'FlutterNest',
       details: 'In progress / Personal / Practice',
-      sourceUrl: 'https://github.com/Wisieneu/TweetSphere',
+      sourceUrl: 'https://github.com/Wisieneu/FlutterNest',
       description:
         'Twitter clone - Main portfolio project, showcase of my frontend, backend and automation testing skills',
     },
