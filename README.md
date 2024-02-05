@@ -2,7 +2,7 @@
 
 ### This repo contains the source code of my portfolio website.
 
-### [==Project demo==>>> portfolio.wise-ee.xyz](wise-ee)
+### [>Project demo: *https://portfolio.wise-ee.xyz*](https://portfolio.wise-ee.xyz/)
 
 ## Made with:
 
