@@ -16,5 +16,7 @@
 ## Development
 
 - `git clone`, `npm i`
-- Setup your [emailjs](https://www.emailjs.com/) account, then put the public key in the `ContactForm/index.ts` component
-- Use your fonts of preference (local imports are in the `./src/index.scss` file) - i used [Neue Montreal](https://pangrampangram.com/products/neue-montreal)
+- Setup your [emailjs](https://www.emailjs.com/) account, then put the public key in the `ContactForm/index.ts` component;
+- Use your fonts of preference (local imports are in the `./src/index.scss` file) - i used [Neue Montreal](https://pangrampangram.com/products/neue-montreal) mostly.
+- `npm start`
+- Start coding and enjoy 🤠
