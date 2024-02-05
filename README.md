@@ -1,7 +1,7 @@
 # [My portfolio website](https://portfolio.wise-ee.xyz/)
 
 Website can be visited at: [*https://portfolio.wise-ee.xyz*](https://portfolio.wise-ee.xyz/)  
-This repo contains the source code of my portfolio website.
+> This repo contains the source code of my portfolio website.
 
 ## Made with:
 
