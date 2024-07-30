@@ -10,5 +10,3 @@ export interface NavProps {
 export interface ContactContentProps {
   toggleModal: toggleModalFunction
 }
-
-// currentPage, switchPage

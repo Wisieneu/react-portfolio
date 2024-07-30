@@ -1,5 +1,7 @@
 .nav-container {
+  z-index: 98;
   padding-top: 50px;
+  max-width: fit-content;
 
   button {
     font-size: 0.9rem;
